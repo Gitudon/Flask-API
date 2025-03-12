@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./app:/usr/src/app:rw
+    environment:
+      TZ: Asia/Tokyo
+    command: ["python3", "phonetic_api.py"]
+    restart: unless-stopped
+    tty: true
