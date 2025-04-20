@@ -1,0 +1,47 @@
+{
+    "岩本照": {
+        "nickname": "ひーくん",
+        "birthday": "1993-05-17",
+        "color": "黄"
+    },
+    "深澤辰哉": {
+        "nickname": "ふっか",
+        "birthday": "1992-05-05",
+        "color": "紫"
+    },
+    "ラウール": {
+        "nickname": "らう",
+        "birthday": "2003-06-27",
+        "color": "白"
+    },
+    "渡辺翔太": {
+        "nickname": "しょっぴー",
+        "birthday": "1992-11-05",
+        "color": "青"
+    },
+    "向井康二": {
+        "nickname": "こーじ",
+        "birthday": "1994-06-21",
+        "color": "橙"
+    },
+    "阿部亮平": {
+        "nickname": "あべちゃん",
+        "birthday": "1993-11-27",
+        "color": "緑"
+    },
+    "目黒蓮": {
+        "nickname": "めめ",
+        "birthday": "1997-02-16",
+        "color": "黒"
+    },
+    "宮舘涼太": {
+        "nickname": "だてさま",
+        "birthday": "1993-03-25",
+        "color": "赤"
+    },
+    "佐久間大介": {
+        "nickname": "さっくん",
+        "birthday": "1992-07-05",
+        "color": "桃"
+    }
+}

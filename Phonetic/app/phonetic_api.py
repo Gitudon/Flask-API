@@ -2,6 +2,7 @@ from flask import Flask,request,jsonify
 from phonetic_codes import codes,reads
 
 app=Flask(__name__)
+app.json.ensure_ascii = False
 
 @app.route("/",methods=["GET"])
 def get_codes():

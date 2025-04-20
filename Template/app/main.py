@@ -1,6 +1,7 @@
 from flask import Flask,request,jsonify
 
 app=Flask(__name__)
+app.json.ensure_ascii = False
 
 @app.route("/",methods=["GET"])
 def main():
