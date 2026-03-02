@@ -7,6 +7,6 @@ services:
       - ./api:/usr/src/api:rw
     environment:
       TZ: Asia/Tokyo
-    command: [ "python3", "snowman-api.py" ]
+    command: [ "python3", "snowman_api.py" ]
     restart: unless-stopped
     tty: true
