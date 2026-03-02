@@ -1,10 +1,11 @@
-from flask import Flask,request,jsonify
 import json
+from flask import Flask, request, jsonify
 
-app=Flask(__name__)
+app = Flask(__name__)
 app.json.ensure_ascii = False
 
-@app.route("/",methods=["GET"])
+
+@app.route("/", methods=["GET"])
 def main():
     return """
     <!DOCTYPE html>
@@ -34,52 +35,57 @@ def main():
     </html>
     """
 
-@app.route("/nickname",methods=["GET"])
+
+@app.route("/nickname", methods=["GET"])
 def get_nickname():
-    query=request.args.get("name",None,type=str)
+    query = request.args.get("name", None, type=str)
     if not query:
         return "Please provide a name to get the nickname."
-    with open("database.json","r",encoding="utf-8") as f:
-        data=json.load(f)
+    with open("database.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
         if query not in data:
             return "The name you provided is not in the database."
-        nickname=data[query]["nickname"]
+        nickname = data[query]["nickname"]
         return jsonify({query: {"nickname": nickname}})
 
-@app.route("/birthday",methods=["GET"])
+
+@app.route("/birthday", methods=["GET"])
 def get_birthday():
-    query=request.args.get("name",None,type=str)
+    query = request.args.get("name", None, type=str)
     if not query:
         return "Please provide a name to get the birthday."
-    with open("database.json","r",encoding="utf-8") as f:
-        data=json.load(f)
+    with open("database.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
         if query not in data:
             return "The name you provided is not in the database."
-        birthday=data[query]["birthday"]
+        birthday = data[query]["birthday"]
         return jsonify({query: {"birthday": birthday}})
 
-@app.route("/color",methods=["GET"])
+
+@app.route("/color", methods=["GET"])
 def get_color():
-    query=request.args.get("name",None,type=str)
+    query = request.args.get("name", None, type=str)
     if not query:
         return "Please provide a name to get the color."
-    with open("database.json","r",encoding="utf-8") as f:
-        data=json.load(f)
+    with open("database.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
         if query not in data:
             return "The name you provided is not in the database."
-        color=data[query]["color"]
+        color = data[query]["color"]
         return jsonify({query: {"color": color}})
 
-@app.route("/all",methods=["GET"])
+
+@app.route("/all", methods=["GET"])
 def get_all():
-    query=request.args.get("name",None,type=str)
-    with open("database.json","r",encoding="utf-8") as f:
-        data=json.load(f)
+    query = request.args.get("name", None, type=str)
+    with open("database.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
         if not query:
             return jsonify(data)
         if query not in data:
             return "The name you provided is not in the database."
         return jsonify({query: data[query]})
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5002)

@@ -1,10 +1,10 @@
 services:
-  app:
+  api:
     build: .
     ports:
       - "5001:5001"
     volumes:
-      - ./app:/usr/src/app:rw
+      - ./api:/usr/src/api:rw
     environment:
       TZ: Asia/Tokyo
     command: ["python3", "phonetic_api.py"]
